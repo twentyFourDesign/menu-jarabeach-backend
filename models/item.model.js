@@ -18,6 +18,10 @@ const itemSchema = new Schema(
       type: Number,
       required: [true, "Price is required."],
     },
+    image : {
+      type :String,
+      required: true
+    }
   },
   { timestamps: true }
 );

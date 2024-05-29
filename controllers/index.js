@@ -12,3 +12,10 @@ export {
   updateItem,
   deleteItem,
 } from "./item.controller.js";
+
+export {
+  postImage,
+  getImage,
+} from "./image.controller.js";
+
+

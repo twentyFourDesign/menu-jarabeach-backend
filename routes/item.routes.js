@@ -7,17 +7,18 @@ import {
   updateItem,
 } from "../controllers/index.js";
 import { ROUTES } from "../constants/index.js";
+import upload from "../utils/multer.js"
 
 export const router = express.Router();
 
 router
   .route(ROUTES.ITEMS_UNFILTERED)
   .get(getAllItemsUnfiltered)
-  .post(createNewItem);
+  .post(upload.any("image"),createNewItem);
 
 router
   .route(`${ROUTES.ITEMS_UNFILTERED}${ROUTES.ID}`)
-  .put(updateItem)
+  .put(upload.any("image"),updateItem)
   .delete(deleteItem);
 
 router.route(ROUTES.ITEMS_FILTERED).get(getAllItemsFiltered);
